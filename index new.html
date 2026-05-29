@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D Color Text Webpage</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial, sans-serif;
+    }
+
+    body{
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:linear-gradient(135deg,#141e30,#243b55);
+        overflow:hidden;
+    }
+
+    .container{
+        text-align:center;
+        animation:fadeIn 2s ease;
+    }
+
+    /* 3D Animated Text */
+    h1{
+        font-size:70px;
+        color:#fff;
+        text-transform:uppercase;
+        letter-spacing:5px;
+
+        text-shadow:
+        1px 1px 0 #ff004c,
+        2px 2px 0 #ff004c,
+        3px 3px 0 #ff004c,
+        4px 4px 0 #ff004c,
+        5px 5px 15px rgba(0,0,0,0.5);
+
+        animation:glow 2s infinite alternate;
+    }
+
+    p{
+        color:#ddd;
+        margin-top:20px;
+        font-size:20px;
+    }
+
+    /* Stylish Button */
+    .btn{
+        margin-top:30px;
+        padding:15px 35px;
+        font-size:18px;
+        border:none;
+        border-radius:30px;
+        cursor:pointer;
+        background:linear-gradient(45deg,#ff512f,#dd2476);
+        color:white;
+        transition:0.4s;
+        box-shadow:0 0 20px rgba(255,255,255,0.3);
+    }
+
+    .btn:hover{
+        transform:scale(1.1);
+        box-shadow:0 0 30px #ff4b2b;
+    }
+
+    /* Floating circles */
+    .circle{
+        position:absolute;
+        border-radius:50%;
+        background:rgba(255,255,255,0.1);
+        animation:float 8s infinite linear;
+    }
+
+    .circle:nth-child(1){
+        width:100px;
+        height:100px;
+        left:10%;
+        top:20%;
+    }
+
+    .circle:nth-child(2){
+        width:150px;
+        height:150px;
+        right:15%;
+        bottom:10%;
+        animation-duration:10s;
+    }
+
+    .circle:nth-child(3){
+        width:70px;
+        height:70px;
+        left:70%;
+        top:15%;
+        animation-duration:6s;
+    }
+
+    @keyframes glow{
+        from{
+            text-shadow:
+            1px 1px 0 #00f7ff,
+            2px 2px 0 #00f7ff,
+            3px 3px 0 #00f7ff,
+            4px 4px 15px #00f7ff;
+        }
+
+        to{
+            text-shadow:
+            1px 1px 0 #ff00f7,
+            2px 2px 0 #ff00f7,
+            3px 3px 0 #ff00f7,
+            4px 4px 20px #ff00f7;
+        }
+    }
+
+    @keyframes fadeIn{
+        from{
+            opacity:0;
+            transform:translateY(50px);
+        }
+        to{
+            opacity:1;
+            transform:translateY(0);
+        }
+    }
+
+    @keyframes float{
+        0%{
+            transform:translateY(0) rotate(0deg);
+        }
+        100%{
+            transform:translateY(-1000px) rotate(360deg);
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+
+<div class="container">
+    <h1>3D Color Text</h1>
+    <p>Awesome HTML + CSS Animation Effects</p>
+
+    <button class="btn" onclick="showMessage()">
+        Click Me
+    </button>
+</div>
+
+<script>
+    function showMessage(){
+        alert("Welcome to 3D Animated Webpage!");
+    }
+</script>
+
+</body>
+</html>
